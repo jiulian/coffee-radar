@@ -1,0 +1,46 @@
+body:before {
+    content: ' ';
+    display: block;
+    background: $main-gradient;
+    height: 5px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: stretch;
+    background: #303030;
+
+    .logo {
+        display: flex;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+
+        @include breakpoint(sm) {
+            width: auto;
+        }
+
+        .logo__text {
+            padding: 10px 0px 5px;
+            display: block;
+            font-family: 'Alegreya Sans', sans-serif;
+            font-weight: 800;
+            letter-spacing: 2px;
+
+            &--coffee {
+                width: 100%;
+                display: block;
+                font-size: 25px;
+            }
+
+            &--radar {
+                width: 100%;
+                display: block;
+                font-size: 35px;
+                margin-top: -12px;
+            }
+        }
+    }
+}
