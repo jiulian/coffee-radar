@@ -2,7 +2,7 @@
   "name": "coffee-radar",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://http://178.62.55.117/coffee-radar/build",
+  "homepage": "http://http://178.62.55.117/",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
