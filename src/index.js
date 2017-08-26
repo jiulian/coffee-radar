@@ -14,7 +14,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const Root = () => {
   return(
-        <BrowserRouter baseame="/build">
+        <BrowserRouter basename="/">
             <Switch>
                 <Route exact path="/" component={ App } />
                 <Route exact path="/map" component={ App } />
