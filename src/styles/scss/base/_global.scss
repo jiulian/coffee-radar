@@ -4,6 +4,21 @@ body {
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
+.container {
+    width: 100%;
+    display: flex;
+    margin: auto;
+
+    @include breakpoint(md) {
+        width: 960px;
+
+        &--fluid {
+            width: 100%;
+        }
+    }
+
+}
+
 .text-center {
     text-align: center;
 }

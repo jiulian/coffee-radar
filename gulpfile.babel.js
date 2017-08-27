@@ -37,7 +37,7 @@ gulp.task("build", () => {
     );
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['build:sass'], function() {
     gulp.watch('./src/styles/scss/**/*.scss', ['build:sass']);
 });
 

@@ -1,22 +1,12 @@
 .card-container {
-    width: 100%;
-    display: flex;
     flex-wrap: wrap;
-    margin: auto;
     justify-content: center;
     position: relative;
-
-    @include breakpoint(md) {
-        width: 960px;
-
-        &--fluid {
-            width: 100%;
-        }
-    }
 }
 
 .card-link {
     text-decoration: none;
+    display: flex;
 }
 
 .card {
@@ -58,7 +48,7 @@
     }
 
     &--medium {
-        max-width: 480px;
+        max-width: 440px;
         margin: 10px;
     }
 

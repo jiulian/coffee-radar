@@ -1,0 +1,34 @@
+.cafe {
+    display: flex;
+
+    &__splash {
+        display: flex;
+        height: 300px;
+        background-color: green;
+        color: white;
+        align-items: center;
+
+        h1 {
+            margin: auto;
+        }
+    }
+
+    &__map {
+        height: 400px;
+        width: 100%;
+
+        @include breakpoint(md) {
+            width: 70%;
+        }
+    }
+
+    &__description {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+
+        @include breakpoint(md) {
+            width: 30%;
+        }
+    }
+}

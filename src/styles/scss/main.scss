@@ -1,11 +1,12 @@
 /* Base */
-@import "./base/typography";
-@import "./base/global";
 @import "./base/mixins";
 @import "./base/variables";
+@import "./base/typography";
+@import "./base/global";
 
 /* Utils */
-@import "./utils/card";
+@import "./global/forms";
+@import "./global/cards";
 
 /* Components */
 @import './components/App';
@@ -17,3 +18,6 @@
 
 /* Map Components */
 @import './components/map/Map';
+
+/* Cafe Components */
+@import './components/cafe/Cafe';
