@@ -35,10 +35,12 @@ class AddCafeForm extends Component {
         const cafe = {
             name: this.refs.name.value,
             description: this.refs.description.value,
-            address1: this.refs.address1.value,
-            address2: this.refs.address2.value,
-            city: this.refs.city.value,
-            postcode: this.refs.postcode.value
+            address: {
+                address1: this.refs.address1.value,
+                address2: this.refs.address2.value,
+                city: this.refs.city.value,
+                postcode: this.refs.postcode.value
+            }
         }
 
         this.refs.name.value = "";

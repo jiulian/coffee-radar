@@ -21,6 +21,19 @@ class Cafe extends Component {
 
     render() {
         const mapId = this.props.match.params.cafe + '-map';
+        let map = '';
+
+        if(this.state.cafe.address) {
+            let location = '';
+            for (let key in this.state.cafe.address) {
+                location += this.state.cafe.address[key] + ', ';
+            }
+
+            map = <GoogleMap
+                    mapId={mapId}
+                    zoom={15}
+                    location={location} />
+        }
 
         return (
             <div>
@@ -28,11 +41,7 @@ class Cafe extends Component {
                 <div className="app text-center cafe">
                     <CafeSplash name={this.state.cafe.name}/>
                     <div className="container">
-                        <GoogleMap
-                            mapId={mapId}
-                            zoom={15}
-                            location="Cafe Coho, Brighton"
-                        />
+                        {map}
                         <div className="cafe__description">
                             {this.state.cafe.description}
                         </div>
