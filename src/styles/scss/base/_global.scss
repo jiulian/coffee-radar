@@ -9,6 +9,10 @@ body {
     display: flex;
     margin: auto;
 
+    &--column {
+        flex-direction: column;
+    }
+
     @include breakpoint(md) {
         width: 960px;
 
@@ -17,6 +21,10 @@ body {
         }
     }
 
+}
+
+hr {
+    width: 50%;
 }
 
 .text-center {
