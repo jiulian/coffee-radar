@@ -110,7 +110,7 @@ class AddCafeForm extends Component {
 
                             <hr />
 
-                            <label>Choose Location of Cafe</label>
+                            <label>Drag marker to choose location of Cafe</label>
                             <GoogleMap
                                 mapId="add-cafe-map"
                                 zoom={15}
