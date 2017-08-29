@@ -77,7 +77,8 @@ button {
 
 label {
   font-weight: bold;
-  margin-left: 12px; }
+  margin-left: 12px;
+  margin-bottom: 10px; }
 
 .form-group {
   display: -webkit-flex;
@@ -304,6 +305,15 @@ body:before {
       margin: auto; }
 
 /* Map Components */
+#main-map {
+  height: 700px;
+  width: 100%; }
+
+.map {
+  margin: auto;
+  height: 500px;
+  width: 100%; }
+
 /* Cafe Components */
 .cafe {
   display: -webkit-flex;

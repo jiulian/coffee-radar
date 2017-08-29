@@ -13,15 +13,17 @@ class GoogleMap extends Component {
 
     render() {
         return (
-            <div id={this.props.mapId} className="cafe__map"></div>
+            <div id={this.props.mapId} className="map"></div>
         );
     }
 
     componentDidMount() {
         const mapId = this.props.mapId
-            , zoom = this.props.zoom
-            , location = this.props.location
-            , renderMap = this.renderMap;
+            , zoom = this.props.zoom ? this.props.zoom : 15
+            , location = this.props.location ? this.props.location : "Brighton, UK"
+            , draggable = this.props.draggable ? this.props.draggable : false
+            , renderMap = this.renderMap
+            , droppedMarker = this.props.droppedMarker ? this.props.droppedMarker : false;
 
         if (location instanceof Object) {
             renderMap(zoom, location, mapId);
@@ -30,23 +32,29 @@ class GoogleMap extends Component {
                 address: location
             }, function(err, response) {
                 if(!err){
-                    renderMap(zoom, response.json.results[0].geometry.location, mapId);
+                    renderMap(zoom, response.json.results[0].geometry.location, mapId, draggable, droppedMarker);
                 }
             })
         }
     }
 
-    renderMap(zoom, location, mapId) {
+    renderMap(zoom, location, mapId, draggable, droppedMarkerFunction) {
         const google = window.google;
 
         const map = new google.maps.Map(document.getElementById(mapId), {
                 zoom: zoom,
                 center: location
-            });
-        new google.maps.Marker({
+            }),
+        marker = new google.maps.Marker({
             position: location,
-            map: map
+            map: map,
+            draggable:draggable
         });
+        if(droppedMarkerFunction) {
+            marker.addListener('dragend', function() {
+                droppedMarkerFunction(this.position.lat(), this.position.lng());
+            })
+        }
     }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './global/Header';
 import base from '../base';
+import GoogleMap from './map/GoogleMap';
 
 class AddCafeForm extends Component {
 
@@ -9,6 +10,7 @@ class AddCafeForm extends Component {
         super();
         this.addCafe = this.addCafe.bind(this);
         this.createCafe = this.createCafe.bind(this);
+        this.updateLocation = this.updateLocation.bind(this);
     }
 
     state = {
@@ -40,6 +42,10 @@ class AddCafeForm extends Component {
                 address2: this.refs.address2.value,
                 city: this.refs.city.value,
                 postcode: this.refs.postcode.value
+            },
+            markerPosition: {
+                lat: parseFloat(this.refs.latitude.value),
+                lng: parseFloat(this.refs.longitude.value)
             }
         }
 
@@ -51,6 +57,11 @@ class AddCafeForm extends Component {
         this.refs.postcode.value = "";
 
         this.addCafe(cafe);
+    }
+
+    updateLocation(latitude, longitude) {
+        this.refs.latitude.value = latitude;
+        this.refs.longitude.value = longitude;
     }
 
     render() {
@@ -98,6 +109,16 @@ class AddCafeForm extends Component {
                             </div>
 
                             <hr />
+
+                            <label>Choose Location of Cafe</label>
+                            <GoogleMap
+                                mapId="add-cafe-map"
+                                zoom={15}
+                                location="Brighton, UK"
+                                draggable={true}
+                                droppedMarker={this.updateLocation}/>
+                            <input ref="latitude" type="hidden" placeholder="Latitude" />
+                            <input ref="longitude" type="hidden" placeholder="Longitude" />
 
                             <button type="submit">+ Add Cafe</button>
                         </form>

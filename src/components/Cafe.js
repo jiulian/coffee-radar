@@ -32,7 +32,8 @@ class Cafe extends Component {
             map = <GoogleMap
                     mapId={mapId}
                     zoom={15}
-                    location={location} />
+                    location={this.state.cafe.markerPosition}
+                    draggable={false} />
         }
 
         return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './global/Header';
-import StaticMap from './map/StaticMap';
+import GoogleMap from './map/GoogleMap';
 import base from '../base';
 
 class App extends Component {
@@ -26,7 +26,9 @@ class App extends Component {
 
                     <div className="card-container container">
                         <div className="card">
-                            <StaticMap />
+                            <div id="main-map">
+                                <GoogleMap mapId="main-map" zoom={14} location="Brighton, UK"  />
+                            </div>
                         </div>
                     </div>
                 </div>
